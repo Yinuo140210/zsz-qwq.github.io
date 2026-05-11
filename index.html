@@ -19,7 +19,6 @@
             transition: background 0.3s;
         }
 
-        /* 主容器：左右两栏布局 */
         .dashboard {
             max-width: 1600px;
             margin: 0 auto;
@@ -28,7 +27,6 @@
             flex-wrap: wrap;
         }
 
-        /* 左侧编辑区 */
         .editor-panel {
             flex: 1.2;
             min-width: 280px;
@@ -42,7 +40,6 @@
             flex-direction: column;
         }
 
-        /* 右侧报告区 */
         .report-panel {
             flex: 1;
             min-width: 360px;
@@ -55,7 +52,6 @@
             overflow: hidden;
         }
 
-        /* 通用卡片头部 */
         .panel-header {
             padding: 18px 24px;
             background: #ffffff;
@@ -80,7 +76,6 @@
             font-size: 1.3rem;
         }
 
-        /* 右侧头部特殊样式 */
         .report-header {
             justify-content: space-between;
         }
@@ -91,7 +86,6 @@
             align-items: center;
         }
 
-        /* 齿轮设置按钮 */
         .settings-gear {
             background: #f1f5f9;
             border: none;
@@ -112,7 +106,6 @@
             transform: rotate(15deg);
         }
 
-        /* 设置浮层面板 */
         .settings-drawer {
             background: #fefefe;
             border-top: 1px solid #edf2f7;
@@ -187,7 +180,6 @@
             color: #0f172a;
         }
 
-        /* 编辑器区域 */
         .editor-container {
             display: flex;
             height: 520px;
@@ -225,13 +217,13 @@
             resize: none;
             background: #ffffff;
             color: #0f172a;
+            transition: background-color 0.3s;
         }
 
         .editor-textarea:focus {
             outline: none;
         }
 
-        /* 按钮样式 */
         .btn {
             padding: 8px 18px;
             border-radius: 32px;
@@ -272,11 +264,10 @@
         }
 
         .btn-sm {
-            padding: 5px 12px;
+            padding: 5px 14px;
             font-size: 0.75rem;
         }
 
-        /* 统计卡片 & 结果列表 */
         .stats {
             display: flex;
             gap: 12px;
@@ -288,21 +279,21 @@
             flex: 1;
             background: #f8fafc;
             border-radius: 20px;
-            padding: 12px 16px;
+            padding: 14px 16px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             border: 1px solid #ecf3fa;
         }
 
         .stat-icon {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
 
         .stat-icon.success { background: #e0f2e9; color: #2b7e3a; }
@@ -310,17 +301,16 @@
         .stat-icon.error { background: #ffe6e5; color: #c2412c; }
 
         .stat-text {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: #5b6e8c;
         }
         .stat-count {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #0f172a;
             line-height: 1.2;
         }
 
-        /* 过滤栏 */
         .filter-bar {
             padding: 0 20px 12px 20px;
             display: flex;
@@ -339,11 +329,16 @@
         .filter-btn {
             background: #f1f5f9;
             border: none;
-            padding: 4px 14px;
+            padding: 5px 16px;
             border-radius: 30px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 500;
             cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            background: #e2e8f0;
         }
 
         .filter-btn.active {
@@ -387,9 +382,24 @@
 
         .issue-icon { font-size: 1.4rem; flex-shrink: 0; }
         .issue-content { flex: 1; }
-        .issue-title { font-weight: 600; color: #0f172a; margin-bottom: 4px; font-size: 0.9rem; }
+        .issue-title { font-weight: 600; color: #0f172a; margin-bottom: 4px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
         .issue-desc { font-size: 0.8rem; color: #475569; }
-        .issue-location { font-size: 0.7rem; color: #6c86a3; margin-top: 6px; }
+        .issue-location { font-size: 0.72rem; color: #6c86a3; margin-top: 6px; }
+
+        .copy-btn {
+            font-size: 0.72rem;
+            padding: 3px 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #45a049;
+        }
 
         .legend {
             display: flex;
@@ -403,7 +413,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
         }
 
         .legend-dot {
@@ -519,7 +529,7 @@
             .dashboard { flex-direction: column; }
             body { padding: 16px; }
         }
-        /* 滚动条美化 */
+
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 6px; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
@@ -529,7 +539,6 @@
 </head>
 <body>
 <div class="dashboard">
-    <!-- 左侧编辑区 -->
     <div class="editor-panel">
         <div class="panel-header">
             <h2><span>✍️</span> 题解编辑器</h2>
@@ -548,18 +557,17 @@
         </div>
     </div>
 
-    <!-- 右侧报告区 -->
     <div class="report-panel">
         <div class="panel-header report-header">
             <h2><span>📋</span> 检查报告</h2>
             <div class="action-buttons">
+                <button class="btn btn-secondary btn-sm" onclick="copyAllSuggestions()">📋 一键复制建议</button>
                 <button class="btn btn-secondary btn-sm" onclick="exportReport()">📥 导出报告</button>
                 <button id="settingsToggleBtn" class="settings-gear" title="设置 & 帮助">⚙️</button>
                 <button id="themeToggle" class="btn btn-secondary btn-sm" onclick="toggleTheme()">🌙 暗色模式</button>
             </div>
         </div>
 
-        <!-- 设置 + 帮助抽屉 -->
         <div id="settingsDrawer" class="settings-drawer">
             <div class="settings-group">
                 <h4>🔧 检查项开关 (实时过滤)</h4>
@@ -568,7 +576,7 @@
                     <label><input type="checkbox" value="space" checked> 中英文空格</label>
                     <label><input type="checkbox" value="markdown" checked> Markdown格式</label>
                     <label><input type="checkbox" value="latex" checked> LaTeX规范</label>
-                    <label><input type="checkbox" value="content" checked> 内容&amp;风格规则</label>
+                    <label><input type="checkbox" value="content" checked> 内容 & 风格规则</label>
                 </div>
                 <div style="font-size: 12px; margin-top: 8px; color: #5d6e8a;">⚠️ 修改开关后自动刷新报告结果</div>
             </div>
@@ -578,7 +586,7 @@
                     <ul style="margin-top: 10px; margin-left: 18px; line-height: 1.5;">
                         <li>全角中文标点，句末句号</li>
                         <li>中文与英文/数字间加空格</li>
-                        <li>数学公式使用 $...$ 或 $$...$$ ，文本用 \text{}</li>
+                        <li>数学公式使用 $...$ 或 $$...$$，文本用 \text{}</li>
                         <li>避免求赞、吐槽、AI生成关键内容</li>
                         <li>标题层级 # 后需空格，代码块标注语言</li>
                         <li>时间复杂度/空间复杂度建议明确</li>
@@ -587,11 +595,10 @@
             </div>
         </div>
 
-        <!-- 统计区域 -->
         <div class="stats">
-            <div class="stat-item"><div class="stat-icon success">✓</div><div><div class="stat-text">通过</div><div class="stat-count" id="successCount">—</div></div></div>
-            <div class="stat-item"><div class="stat-icon warning">⚠️</div><div><div class="stat-text">警告</div><div class="stat-count" id="warningCount">—</div></div></div>
-            <div class="stat-item"><div class="stat-icon error">✗</div><div><div class="stat-text">错误</div><div class="stat-count" id="errorCount">—</div></div></div>
+            <div class="stat-item"><div class="stat-icon success">✓</div><div><div class="stat-text">通过</div><div class="stat-count" id="successCount">0</div></div></div>
+            <div class="stat-item"><div class="stat-icon warning">⚠️</div><div><div class="stat-text">警告</div><div class="stat-count" id="warningCount">0</div></div></div>
+            <div class="stat-item"><div class="stat-icon error">✗</div><div><div class="stat-text">错误</div><div class="stat-count" id="errorCount">0</div></div></div>
         </div>
         <div class="filter-bar">
             <div class="filter-buttons" id="filterGroup">
@@ -617,6 +624,7 @@
 <script>
     let rawIssues = [];
     let currentTypeFilter = "all";
+    let hasChecked = false;
     let categoryFilters = {
         punctuation: true,
         space: true,
@@ -647,58 +655,11 @@
     }
 
     function removeFormulas(text) {
-        return text.replace(/`[^`]+?`/g, '').replace(/\$[^$]+?\$/g, '').replace(/\$\$[\s\S]*?\$\$/g, '');
-    }
-
-    function isPartOfTripleColon(text, globalIdx) {
-        if (text[globalIdx] !== ':') return false;
-        let left = globalIdx, right = globalIdx;
-        while (left >= 0 && text[left] === ':') left--;
-        while (right < text.length && text[right] === ':') right++;
-        const colonLen = right - left - 1;
-        return colonLen >= 3;
-    }
-
-    function getFullWidth(char) { 
-        const map = { '!':'！','?':'？',':':'：',';':'；',',':'，','.':'。' }; 
-        return map[char] || char; 
-    }
-
-    function checkPunctuation(text) {
-        const issues = [];
-        const lines = text.split('\n');
-        let inCodeBlock = false;
-        for (let i = 0; i < lines.length; i++) {
-            let line = lines[i];
-            if (line.trim().startsWith('```')) { inCodeBlock = !inCodeBlock; continue; }
-            if (inCodeBlock) continue;
-            let cleanLine = removeFormulas(line);
-            const halfWidthPunct = /[.,;:!?]/g;
-            let match;
-            while ((match = halfWidthPunct.exec(cleanLine)) !== null) {
-                const char = match[0];
-                const globalPosInLine = match.index;
-                if (char === ':' && isPartOfTripleColon(cleanLine, globalPosInLine)) continue;
-                if (!isAllowedTerm(cleanLine, globalPosInLine)) {
-                    issues.push({
-                        type: 'error',
-                        category: 'punctuation',
-                        title: '使用了半角标点',
-                        desc: `建议将 "${char}" 改为全角标点 "${getFullWidth(char)}"`,
-                        line: i+1, col: globalPosInLine+1
-                    });
-                }
-            }
-            const trimmedLine = cleanLine.trim();
-            if (trimmedLine && !/^(\*|-|\+|\d+\.)\s/.test(trimmedLine) && !/^(#|>|```)/.test(trimmedLine)) {
-                const endsWithFormula = /\$$/.test(line.trim());
-                const isComment = /^\s*#/.test(trimmedLine);
-                if (!/[\u3002\uff01\uff1f\uff1a\uff1b]$/.test(trimmedLine) && !endsWithFormula && !isComment) {
-                    issues.push({ type: 'error', category: 'punctuation', title: '句子末尾缺少句号', desc: '中文句子末尾应使用句号', line: i+1 });
-                }
-            }
-        }
-        return issues;
+        let result = text;
+        result = result.replace(/`[^`]+?`/g, '');
+        result = result.replace(/\$[^$]+?\$/g, '');
+        result = result.replace(/\$\$[\s\S]*?\$\$/g, '');
+        return result;
     }
 
     function isAllowedTerm(text, index) {
@@ -722,10 +683,84 @@
         return false;
     }
 
+    function checkPunctuation(text) {
+        const issues = [];
+        const lines = text.split('\n');
+        let inCodeBlock = false;
+        let inFormula = false;
+        
+        for (let i = 0; i < lines.length; i++) {
+            let line = lines[i];
+            const lineNum = i + 1;
+            
+            if (line.trim().startsWith('```')) {
+                inCodeBlock = !inCodeBlock;
+                continue;
+            }
+            
+            if (inCodeBlock) {
+                continue;
+            }
+            
+            let cleanLine = removeFormulas(line);
+            const dollarCount = (line.match(/\$/g) || []).length;
+            if (dollarCount % 2 !== 0) {
+                inFormula = !inFormula;
+                continue;
+            }
+            
+            const halfWidthPunct = /[.!?;:,]/g;
+            let match;
+            while ((match = halfWidthPunct.exec(cleanLine)) !== null) {
+                const char = match[0];
+                if ('!?:;,'.includes(char)) {
+                    if (!isAllowedTerm(cleanLine, match.index)) {
+                        issues.push({
+                            type: 'error',
+                            category: 'punctuation',
+                            title: '使用了半角标点',
+                            desc: `建议将 "${char}" 改为全角标点 "${getFullWidth(char)}"`,
+                            line: lineNum,
+                            col: match.index + 1
+                        });
+                    }
+                }
+            }
+            
+            const trimmedLine = cleanLine.trim();
+            if (trimmedLine) {
+                const isListItem = /^(\*|-|\+|\d+\.)\s/.test(trimmedLine);
+                const endsWithValid = /[\u3002\uff01\uff1f\uff1a\uff1b]$/.test(trimmedLine);
+                
+                if (!endsWithValid && !isListItem) {
+                    const isSpecial = /^(#|>|```)/.test(trimmedLine);
+                    if (!isSpecial) {
+                        issues.push({
+                            type: 'error',
+                            category: 'punctuation',
+                            title: '句子末尾缺少句号',
+                            desc: '中文句子末尾应使用句号',
+                            line: lineNum
+                        });
+                    }
+                }
+            }
+        }
+        
+        return issues;
+    }
+
+    function getFullWidth(char) {
+        const map = { '!':'！','?':'？',':':'：',';':'；',',':'，','.':'。' };
+        return map[char] || char;
+    }
+
     function checkChineseEnglishSpace(text) {
         const issues = [];
         const lines = text.split('\n');
         let inCodeBlock = false;
+        let inFormula = false;
+        
         const chineseEnglish = /([\u4e00-\u9fa5])([a-zA-Z0-9])/g;
         const englishChinese = /([a-zA-Z0-9])([\u4e00-\u9fa5])/g;
         
@@ -760,145 +795,840 @@
             return false;
         }
 
-        for (let i=0; i<lines.length; i++) {
-            let line = lines[i];
-            if (line.trim().startsWith('```')) { inCodeBlock = !inCodeBlock; continue; }
-            if (inCodeBlock) continue;
-            let clean = removeFormulas(line);
+        function isSingleCapitalLetterCase(text, matchIndex, isChineseFirst) {
+            if (isChineseFirst) {
+                const afterMatch = text.substring(matchIndex + 2);
+                const firstCharAfter = afterMatch.charAt(0);
+                return /^[A-Z]$/.test(text.charAt(matchIndex + 1)) && !/^[a-zA-Z0-9]/.test(firstCharAfter);
+            } else {
+                const beforeMatch = text.substring(0, matchIndex);
+                const lastCharBefore = beforeMatch.charAt(beforeMatch.length - 1);
+                return /^[A-Z]$/.test(text.charAt(matchIndex)) && !/[a-zA-Z0-9]$/.test(lastCharBefore);
+            }
+        }
+        
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            const lineNum = i + 1;
+            
+            if (line.trim().startsWith('```')) {
+                inCodeBlock = !inCodeBlock;
+                continue;
+            }
+            
+            if (inCodeBlock) {
+                continue;
+            }
+            
+            let cleanLine = removeFormulas(line);
+            const dollarCount = (line.match(/\$/g) || []).length;
+            if (dollarCount % 2 !== 0) {
+                inFormula = !inFormula;
+                continue;
+            }
+            
             let match;
-            while ((match = chineseEnglish.exec(clean)) !== null) {
-                if (!isAllowedCombination(clean, match.index)) {
-                    issues.push({ type: 'warning', category: 'space', title: '中文与英文/数字之间缺少空格', desc: `"${match[1]}${match[2]}" 之间应添加空格`, line: i+1 });
+            chineseEnglish.lastIndex = 0;
+            while ((match = chineseEnglish.exec(cleanLine)) !== null) {
+                if (!isAllowedCombination(cleanLine, match.index) && !isSingleCapitalLetterCase(cleanLine, match.index, true)) {
+                    issues.push({
+                        type: 'error',
+                        category: 'space',
+                        title: '中文与英文/数字之间缺少空格',
+                        desc: `"${match[1]}${match[2]}" 之间应添加空格`,
+                        line: lineNum,
+                        col: match.index + 1
+                    });
                 }
             }
-            while ((match = englishChinese.exec(clean)) !== null) {
-                if (!isAllowedCombination(clean, match.index)) {
-                    issues.push({ type: 'warning', category: 'space', title: '英文/数字与中文之间缺少空格', desc: `"${match[1]}${match[2]}" 之间应添加空格`, line: i+1 });
+            
+            englishChinese.lastIndex = 0;
+            while ((match = englishChinese.exec(cleanLine)) !== null) {
+                if (!isAllowedCombination(cleanLine, match.index) && !isSingleCapitalLetterCase(cleanLine, match.index, false)) {
+                    issues.push({
+                        type: 'error',
+                        category: 'space',
+                        title: '英文/数字与中文之间缺少空格',
+                        desc: `"${match[1]}${match[2]}" 之间应添加空格`,
+                        line: lineNum,
+                        col: match.index + 1
+                    });
                 }
             }
         }
+        
         return issues;
     }
 
     function checkMarkdownFormat(text) {
         const issues = [];
         const lines = text.split('\n');
-        let inCode = false;
-        for(let i=0; i<lines.length; i++) {
-            let line = lines[i];
-            if(line.trim().startsWith('```')){ inCode=!inCode; continue; }
-            if(inCode) continue;
-            if(/^#+[^\s#]/.test(line)) issues.push({ type: 'warning', category: 'markdown', title: '标题格式错误', desc: '# 后应添加空格', line: i+1 });
-            if(/^#{7,}\s/.test(line)) issues.push({ type: 'warning', category: 'markdown', title: '标题层级过深', desc: '建议使用1-6级标题', line: i+1 });
+        let inCodeBlock = false;
+        
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            const lineNum = i + 1;
+            
+            if (line.trim().startsWith('```')) {
+                inCodeBlock = !inCodeBlock;
+                continue;
+            }
+            
+            if (inCodeBlock) {
+                continue;
+            }
+            
+            if (/^#+[^\s#]/.test(line)) {
+                issues.push({
+                    type: 'warning',
+                    category: 'markdown',
+                    title: '标题格式错误',
+                    desc: '标题符号 # 后应添加空格',
+                    line: lineNum
+                });
+            }
+            
+            if (/^#{7,}\s/.test(line)) {
+                issues.push({
+                    type: 'warning',
+                    category: 'markdown',
+                    title: '标题层级过深',
+                    desc: '建议使用 1-6 级标题',
+                    line: lineNum
+                });
+            }
+            
+            if (/`[^`]+`[^`]/.test(line)) {
+                const match = line.match(/`([^`]+)`/);
+                if (match && match[1].length > 50) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'markdown',
+                        title: '行内代码过长',
+                        desc: '较长的代码应使用代码块而非行内代码',
+                        line: lineNum
+                    });
+                }
+            }
         }
-        if(/```[\s\S]*?```/g.test(text) && !text.includes('```cpp') && !text.includes('```python') && !text.includes('```java'))
-            issues.push({ type: 'warning', category: 'markdown', title: '代码块缺少语言标识', desc: '建议添加语言标识如 ```cpp', line:0 });
+        
+        if (/```[\s\S]*?```/g.test(text)) {
+            if (!text.includes('```cpp') && !text.includes('```python') && !text.includes('```java') && !text.includes('```python3') && !text.includes('```javascript') && !text.includes('```js') && !text.includes('```c') && !text.includes('```c++') && !text.includes('```go') && !text.includes('```rust')) {
+                issues.push({
+                    type: 'warning',
+                    category: 'markdown',
+                    title: '代码块缺少语言标识',
+                    desc: '建议在 ``` 后添加语言标识，如 ```cpp',
+                    line: 0
+                });
+            }
+        }
+        
         return issues;
+    }
+
+    function maskLaTeXBraces(formula) {
+        const mappings = [];
+        let index = 0;
+        
+        const patterns = [
+            /\\([a-zA-Z]+)_{([^}]*)}^{([^}]*)}/g,
+            /\\([a-zA-Z]+)^{([^}]*)}_{([^}]*)}/g,
+            /\\([a-zA-Z]+)_{([^}]*)}/g,
+            /\\([a-zA-Z]+)^{([^}]*)}/g,
+            /\\([a-zA-Z]+)\{([^}]*)\}\{([^}]*)\}/g,
+            /\\([a-zA-Z]+)\{([^}]*)\}/g
+        ];
+        
+        let masked = formula;
+        for (const pattern of patterns) {
+            pattern.lastIndex = 0;
+            let match;
+            const tempMappings = [];
+            let tempResult = '';
+            let lastIndex = 0;
+            
+            while ((match = pattern.exec(masked)) !== null) {
+                tempResult += masked.substring(lastIndex, match.index);
+                const placeholder = `<<B${index}>>`;
+                tempMappings.push({ placeholder, original: match[0] });
+                tempResult += placeholder;
+                index++;
+                lastIndex = match.index + match[0].length;
+            }
+            tempResult += masked.substring(lastIndex);
+            
+            for (const mapping of tempMappings) {
+                mappings.push(mapping);
+            }
+            masked = tempResult;
+        }
+        
+        return { masked, mappings };
+    }
+
+    function unmaskLaTeXBraces(masked, mappings) {
+        let result = masked;
+        for (const { placeholder, original } of mappings) {
+            result = result.replace(placeholder, original);
+        }
+        return result;
+    }
+
+    function getBracketPairs(formula) {
+        const pairs = [];
+        const stack = [];
+        const closeMap = { ')': '(', ']': '[', '}': '{' };
+        
+        let i = 0;
+        while (i < formula.length) {
+            const char = formula[i];
+            
+            if (char === '^' || char === '_') {
+                if (i + 1 < formula.length && formula[i + 1] === '{') {
+                    let depth = 1;
+                    let j = i + 2;
+                    while (j < formula.length && depth > 0) {
+                        if (formula[j] === '{') depth++;
+                        if (formula[j] === '}') depth--;
+                        j++;
+                    }
+                    i = j - 1;
+                }
+            } else if (char === '(' || char === '[' || char === '{') {
+                stack.push({ char, index: i });
+            } else if (char === ')' || char === ']' || char === '}') {
+                if (stack.length > 0) {
+                    const top = stack.pop();
+                    if (top.char === closeMap[char]) {
+                        pairs.push({
+                            open: top.char,
+                            close: char,
+                            start: top.index,
+                            end: i,
+                            inner: formula.substring(top.index + 1, i)
+                        });
+                    }
+                }
+            }
+            i++;
+        }
+        return pairs;
     }
 
     function checkLaTeXFormat(text) {
         const issues = [];
         const lines = text.split('\n');
-        let inCode=false;
-        const commonVars = ['x', 'y', 'z', 'n', 'm', 'k', 'i', 'j', 'a', 'b', 'c', 'd', 'f', 'g', 'h', 'l', 'r', 't', 's', 'u', 'v', 'w', 'p', 'q'];
+        let inCodeBlock = false;
         
-        for(let i=0; i<lines.length; i++){
-            let line=lines[i];
-            if(line.trim().startsWith('```')){ inCode=!inCode; continue; }
-            if(inCode) continue;
-            const inlineMath = /\$(.*?)\$/g;
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            const lineNum = i + 1;
+            
+            if (line.trim().startsWith('```')) {
+                inCodeBlock = !inCodeBlock;
+                continue;
+            }
+            
+            if (inCodeBlock) {
+                continue;
+            }
+            
+            const inlineMath = /\$([^$]+)\$/g;
             let match;
-            while((match = inlineMath.exec(line)) !== null){
+            while ((match = inlineMath.exec(line)) !== null) {
                 const content = match[1];
+                const commonVars = ['x', 'y', 'z', 'n', 'm', 'k', 'i', 'j', 'a', 'b', 'c', 'd', 'f', 'g', 'h', 'l', 'r', 't', 's', 'u', 'v', 'w', 'p', 'q'];
+                const mathVars = ['dp', 'ans', 'res', 'maxn', 'minn', 'sum', 'cnt', 'tot', 'len', 'pos', 'pre', 'suf', 'mid', 'l', 'r', 'i', 'j', 'k', 'n', 'm', 'x', 'y'];
+                const mathFuncs = ['max', 'min', 'abs', 'gcd', 'lcm', 'sqrt', 'log', 'sin', 'cos', 'tan', 'sum', 'prod'];
+                const algoNames = ['DP', 'SPFA', 'DFS', 'BFS', 'Dijkstra', 'Floyd', 'Kruskal', 'Prim', 'LCA', 'RMQ', 'SCC', 'TSP', 'CDQ', 'FFT', 'NTT', 'SAM', 'SA', 'SGT', 'BIT', 'Sqrt', 'Mo', 'Treap', 'Splay', 'LCT', 'HLD'];
                 const isSingleCommonVar = /^[a-zA-Z]$/.test(content) && commonVars.includes(content.toLowerCase());
                 
-                if(/[a-zA-Z]+/.test(content) && !content.includes('\\text') && !content.includes('\\texttt') && !isSingleCommonVar){
-                    const hasMathSymbol = /[+\-*/=<>^_\\]/.test(content);
+                if (/[a-zA-Z]+/.test(content) && !content.includes('\\text') && !content.includes('\\texttt')) {
+                    const hasMathSymbol = /[+\-*/=<>^_\[\],]/.test(content);
                     const hasMathCommand = /\\[a-zA-Z]+/.test(content);
-                    const hasBrackets = /\{\}/.test(content);
-                    if (!hasMathSymbol && !hasMathCommand && !hasBrackets && content.match(/[a-zA-Z]+/g)) {
-                        issues.push({ type: 'warning', category: 'latex', title: 'LaTeX含普通文本', desc: `公式 "${content}" 中的单词建议用 \\text{}`, line: i+1 });
+                    const hasBrackets = /[()\[\]{}]/.test(content);
+                    const hasSubscript = content.includes('_') || content.includes('^');
+                    
+                    const cleanContent = content.replace(/[_{}\[\]()^,\s]/g, '');
+                    const isCommonMathVar = mathVars.includes(cleanContent.toLowerCase()) || 
+                                        mathFuncs.includes(cleanContent.toLowerCase());
+                    
+                    const isVarList = /^(\s*[a-zA-Z]\s*,)+\s*[a-zA-Z]\s*$/.test(content);
+                    const isAbsoluteValue = /^\|[^|]+\|$/.test(content);
+                    
+                    if (!hasMathSymbol && !hasMathCommand && !hasBrackets && !hasSubscript && 
+                        !isCommonMathVar && !isVarList && !isAbsoluteValue && content.match(/[a-zA-Z]+/g) && content.length > 1) {
+                        if (algoNames.includes(cleanContent)) {
+                            issues.push({
+                                type: 'warning',
+                                category: 'latex',
+                                title: '算法名称不应使用 LaTeX',
+                                desc: `算法名 "${content}" 不应使用 $...$ 包裹，建议使用 **${cleanContent}**`,
+                                line: lineNum,
+                                col: match.index + 1
+                            });
+                        } else {
+                            issues.push({
+                                type: 'warning',
+                                category: 'latex',
+                                title: 'LaTeX 中可能包含非数学文本',
+                                desc: `公式 "${content}" 中包含普通文本，建议使用 \\text{} 包裹`,
+                                line: lineNum,
+                                col: match.index + 1
+                            });
+                        }
+                    }
+                }
+                
+                if (/^[a-zA-Z]$/.test(content) && !isSingleCommonVar) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '单个字母可能无需使用公式',
+                        desc: `单个字母 "${content}" 是否需要用 $...$ 包裹？`,
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (/([a-zA-Z])_([a-zA-Z]{2,})/.test(content)) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '下标格式建议',
+                        desc: '下标多个字符应使用花括号，如 a_{12}',
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (/([a-zA-Z])\^([a-zA-Z]{2,})/.test(content)) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '上标格式建议',
+                        desc: '上标多个字符应使用花括号，如 a^{12}',
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (content.includes(' and ') || content.includes(' or ') || content.includes(' is ')) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '公式中包含连接词',
+                        desc: '"and", "or", "is" 等词建议使用 \\text{} 包裹',
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (content.includes('~')) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '波浪线应使用 \\sim',
+                        desc: `公式 "${content}" 中包含波浪线 ~，建议使用 \\sim`,
+                        sugg: '\\sim',
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (content.includes('...')) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '省略号应使用 \\ldots 或 \\cdots',
+                        desc: `公式 "${content}" 中包含省略号 ...，建议使用 \\ldots 或 \\cdots`,
+                        sugg: '\\ldots',
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (/[^a-zA-Z_]\/[^a-zA-Z_]/.test(content) && !content.includes('\\frac')) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '除法应使用 \\frac',
+                        desc: `公式 "${content}" 中包含普通除法符号 /，建议使用 \\frac{}{}`,
+                        sugg: '\\frac{}{}',
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (/[^a-zA-Z_]\*[^a-zA-Z_]/.test(content) && !content.includes('\\times')) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '乘法应使用 \\times',
+                        desc: `公式 "${content}" 中包含普通乘法符号 *，建议使用 \\times`,
+                        sugg: '\\times',
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (content.includes('<=') && !content.includes('\\leq')) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '小于等于应使用 \\leq',
+                        desc: `公式 "${content}" 中包含 <=，建议使用 \\leq`,
+                        sugg: '\\leq',
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (content.includes('>=') && !content.includes('\\geq')) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '大于等于应使用 \\geq',
+                        desc: `公式 "${content}" 中包含 >=，建议使用 \\geq`,
+                        sugg: '\\geq',
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (content.includes('!=') && !content.includes('\\neq')) {
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '不等于应使用 \\neq',
+                        desc: `公式 "${content}" 中包含 !=，建议使用 \\neq`,
+                        sugg: '\\neq',
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                const hasComplexContent = content.includes('_') || content.includes('^') || content.includes('\\frac') || content.includes('\\sum') || content.includes('\\prod') || content.includes('\\int');
+                
+                if (hasComplexContent) {
+                    const { masked, mappings } = maskLaTeXBraces(content);
+                    let needsLeftRight = true;
+                    let suggContent = masked;
+                    
+                    while (needsLeftRight) {
+                        const bracketPairs = getBracketPairs(suggContent);
+                        const pairsWithoutLeftRight = bracketPairs.filter(pair => {
+                            if (pair.open !== '(') {
+                                return !suggContent.substring(0, pair.start).includes('\\left') &&
+                                       !suggContent.substring(pair.end).includes('\\right');
+                            }
+                            const beforePart = suggContent.substring(0, pair.start);
+                            const prevChar = beforePart.charAt(beforePart.length - 1);
+                            if (prevChar === 'O') {
+                                return false;
+                            }
+                            return !beforePart.includes('\\left') &&
+                                   !suggContent.substring(pair.end).includes('\\right');
+                        });
+                        
+                        if (pairsWithoutLeftRight.length === 0) {
+                            needsLeftRight = false;
+                            break;
+                        }
+                        
+                        const innermostPairs = pairsWithoutLeftRight.filter(p => 
+                            !pairsWithoutLeftRight.some(p2 => p2.start > p.start && p2.end < p.end)
+                        );
+                        
+                        const sortedPairs = [...innermostPairs].sort((a, b) => b.start - a.start);
+                        
+                        for (const pair of sortedPairs) {
+                            const before = suggContent.substring(0, pair.start);
+                            const after = suggContent.substring(pair.end + 1);
+                            const inner = suggContent.substring(pair.start + 1, pair.end);
+                            let leftCmd, rightCmd;
+                            if (pair.open === '(') {
+                                leftCmd = '\\left(';
+                                rightCmd = '\\right)';
+                            } else if (pair.open === '[') {
+                                leftCmd = '\\left[';
+                                rightCmd = '\\right]';
+                            } else if (pair.open === '{') {
+                                leftCmd = '\\left\\{';
+                                rightCmd = '\\right\\}';
+                            }
+                            suggContent = `${before}${leftCmd} ${inner} ${rightCmd}${after}`;
+                        }
+                    }
+                    
+                    suggContent = unmaskLaTeXBraces(suggContent, mappings);
+                    
+                    if (suggContent !== content) {
+                        issues.push({
+                            type: 'warning',
+                            category: 'latex',
+                            title: '复杂括号应使用 \\left 和 \\right',
+                            desc: `公式 "${content}" 中包含复杂内容的括号，建议使用 \\left 和 \\right`,
+                            sugg: suggContent,
+                            line: lineNum,
+                            col: match.index + 1
+                        });
+                    }
+                }
+                
+                if (content.includes('\\ceil') && !content.includes('\\lceil')) {
+                    const ceilMatch = content.match(/\\ceil\{([^}]*)\}/);
+                    let suggContent = '\\left\\lceil ... \\right\\rceil';
+                    if (ceilMatch && ceilMatch[1].trim()) {
+                        suggContent = `\\left\\lceil ${ceilMatch[1]} \\right\\rceil`;
+                    }
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '\\ceil 应使用 \\lceil 和 \\rceil',
+                        desc: `公式 "${content}" 中包含 \\ceil，建议使用 \\left\\lceil ... \\right\\rceil`,
+                        sugg: suggContent,
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (content.includes('\\floor') && !content.includes('\\lfloor')) {
+                    const floorMatch = content.match(/\\floor\{([^}]*)\}/);
+                    let suggContent = '\\left\\lfloor ... \\right\\rfloor';
+                    if (floorMatch && floorMatch[1].trim()) {
+                        suggContent = `\\left\\lfloor ${floorMatch[1]} \\right\\rfloor`;
+                    }
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '\\floor 应使用 \\lfloor 和 \\rfloor',
+                        desc: `公式 "${content}" 中包含 \\floor，建议使用 \\left\\lfloor ... \\right\\rfloor`,
+                        sugg: suggContent,
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                if (content.includes('|') && !content.includes('\\left|') && !content.includes('\\right|') && hasComplexContent) {
+                    const absMatch = content.match(/\|([\s\S]*)\|/);
+                    let suggContent = '\\left| ... \\right|';
+                    if (absMatch && absMatch[1].trim()) {
+                        suggContent = `\\left| ${absMatch[1]} \\right|`;
+                    }
+                    issues.push({
+                        type: 'warning',
+                        category: 'latex',
+                        title: '复杂绝对值应使用 \\left| 和 \\right|',
+                        desc: `公式 "${content}" 中包含复杂内容的绝对值，建议使用 \\left| 和 \\right|`,
+                        sugg: suggContent,
+                        line: lineNum,
+                        col: match.index + 1
+                    });
+                }
+                
+                const braceMatch = content.match(/\{([^}]+)\}/g);
+                if (braceMatch) {
+                    for (const brace of braceMatch) {
+                        const inner = brace.slice(1, -1);
+                        const braceIndex = content.indexOf(brace);
+                        
+                        let isCommandArg = false;
+                        let j = braceIndex - 1;
+                        while (j >= 0 && content[j] === ' ') j--;
+                        if (j >= 0 && content[j] === '\\') {
+                            isCommandArg = true;
+                        } else if (j >= 0 && (content[j] === '_' || content[j] === '^')) {
+                            isCommandArg = true;
+                        }
+                        
+                        if (!isCommandArg && !inner.includes('_') && !inner.includes('^') && !inner.includes('\\') && !inner.match(/^[a-zA-Z]+$/)) {
+                            issues.push({
+                                type: 'warning',
+                                category: 'latex',
+                                title: '花括号可能需要转义',
+                                desc: `公式 "${content}" 中 "${brace}" 可能是花括号符号，建议使用 \\{...\\}`,
+                                sugg: '\\{...\\}',
+                                line: lineNum,
+                                col: match.index + 1
+                            });
+                        }
                     }
                 }
             }
         }
-        if(!text.includes('\\pmod') && (text.includes(' mod ') || text.includes(' % ')))
-            issues.push({ type: 'warning', category: 'latex', title: '模运算建议 \\pmod', desc: '使用 \\pmod{} 代替 mod / %', line:0 });
+        
+        const displayMathRegex = /\$\$([\s\S]*?)\$\$/g;
+        let dmMatch;
+        while ((dmMatch = displayMathRegex.exec(text)) !== null) {
+            const content = dmMatch[1];
+            if (!/\n/.test(content) && content.trim().length < 30 && !content.includes('\\begin')) {
+                issues.push({
+                    type: 'warning',
+                    category: 'latex',
+                    title: '短公式建议使用行内格式',
+                    desc: '较短的公式建议使用 $...$ 而非 $$...$$',
+                    line: 0
+                });
+            }
+        }
+        if (/^\s*\$[^$]+\$\s*$/gm.test(text)) {
+            issues.push({
+                type: 'warning',
+                category: 'latex',
+                title: '公式独占一行',
+                desc: '建议将行内公式嵌入文本中，或使用 $$...$$ 格式',
+                line: 0
+            });
+        }
+        
+        const inlineMathPattern = /\$([^$]+)\$/g;
+        let mathMatch;
+        let hasModInMath = false;
+        while ((mathMatch = inlineMathPattern.exec(text)) !== null) {
+            const mathContent = mathMatch[1];
+            if ((mathContent.includes(' mod ') || mathContent.includes(' % ')) && !mathContent.includes('\\pmod')) {
+                hasModInMath = true;
+                break;
+            }
+        }
+        
+        if (hasModInMath) {
+            issues.push({
+                type: 'warning',
+                category: 'latex',
+                title: '建议使用 \\pmod',
+                desc: '公式中的模运算建议使用 \\pmod{} 而非 " mod " 或 " % "',
+                line: 0
+            });
+        }
+        
         return issues;
     }
 
-    function checkContentRules(text){
-        const issues=[];
-        const bad = [
-            {pattern:/蒟蒻|菜鸡|弱鸡|垃圾/i, type:'warning', category:'content', title:'不恰当自谦用语', desc:'建议专业表述'},
-            {pattern:/求赞|求过|求管理员|给个赞/i, type:'warning', category:'content', title:'包含求赞内容', desc:'题解不应包含求赞'},
-            {pattern:/GPT|ChatGPT|AI生成|Claude|豆包|文心一言|Gemini/i, type:'warning', category:'content', title:'可能使用AI生成', desc:'关键内容不应AI辅助生成'},
-            {pattern:/这道题很简单|太简单了|水题/i, type:'warning', category:'content', title:'不当表述', desc:'避免轻视难题'},
-        ];
-        bad.forEach(({pattern,type,title,desc,category})=>{ if(pattern.test(text)) issues.push({type, category, title, desc, line:0}); });
-        if(!/#.*分析|#.*思路/.test(text)) issues.push({ type:'warning', category:'content', title:'缺少题目分析部分', desc:'应包含解题思路部分', line:0 });
-        if(!text.includes('时间复杂度')) issues.push({ type:'warning', category:'content', title:'缺少时间复杂度分析', desc:'建议添加复杂度', line:0 });
-        if(!text.includes('空间复杂度')) issues.push({ type:'warning', category:'content', title:'缺少空间复杂度分析', desc:'建议添加空间复杂度', line:0 });
-        const codeBlocks = text.match(/```[\s\S]*?```/g);
-        if(!codeBlocks || codeBlocks.length===0) issues.push({ type:'warning', category:'content', title:'缺少代码部分', desc:'题解通常应包含代码实现', line:0 });
+    function checkContentRules(text) {
+        const issues = [];
         
-        const headers = text.match(/^#+\s.*$/gm);
+        const badPatterns = [
+            { pattern: /蒟蒻|菜鸡|弱鸡|垃圾/i, type: 'warning', title: '包含不恰当自谦用语', desc: '建议使用更专业的表述' },
+            { pattern: /求赞|求过|求管理员|给个赞|求收藏/i, type: 'warning', title: '包含求赞内容', desc: '题解不应包含求赞、求通过等无关内容' },
+            { pattern: /第一篇|处女作|第一次|我的题解|我写的/i, type: 'warning', title: '包含无关个人描述', desc: '建议专注于题解内容' },
+            { pattern: /哈哈|呵呵|卧槽|我靠|呜呜|嘤嘤/i, type: 'warning', title: '包含闲聊或不文明用语', desc: '请保持题解专业性' },
+            { pattern: /GPT|ChatGPT|AI生成|人工智能|Claude|Gemini|文心一言|豆包/i, type: 'warning', title: '可能使用AI生成', desc: '关键内容不应使用生成式AI辅助产生' },
+            { pattern: /这道题很简单|太简单了|水题|大水题/i, type: 'warning', title: '包含不当表述', desc: '请保持谦逊，避免使用轻视的表述' },
+        ];
+        
+        badPatterns.forEach(({ pattern, type, title, desc }) => {
+            if (pattern.test(text)) {
+                issues.push({ type, category: 'content', title, desc, line: 0 });
+            }
+        });
+        
+        const dpPattern = /([A-Z]{2,})\(([\u4e00-\u9fa5]+)\)/g;
+        let dpMatch;
+        while ((dpMatch = dpPattern.exec(text)) !== null) {
+            const abbreviation = dpMatch[1];
+            const chineseName = dpMatch[2];
+            issues.push({
+                type: 'warning',
+                category: 'content',
+                title: '英文缩写与中文说明格式建议',
+                desc: `"${abbreviation}(${chineseName})" 建议改为 "**${abbreviation}** （${chineseName}）"`,
+                sugg: `**${abbreviation}** （${chineseName}）`,
+                line: text.substring(0, dpMatch.index).split('\n').length
+            });
+        }
+        
+        if (!/#.*分析|#.*思路|##.*分析|##.*思路|###.*分析|###.*思路/.test(text)) {
+            issues.push({
+                type: 'warning',
+                category: 'content',
+                title: '缺少题目分析部分',
+                desc: '题解应包含题目分析或解题思路部分',
+                line: 0
+            });
+        }
+        
+        if (!text.includes('时间复杂度') && !text.includes('O(')) {
+            issues.push({
+                type: 'warning',
+                category: 'content',
+                title: '缺少时间复杂度分析',
+                desc: '建议添加算法的时间复杂度分析',
+                line: 0
+            });
+        }
+        
+        if (!text.includes('空间复杂度') && !text.includes('O(')) {
+            issues.push({
+                type: 'warning',
+                category: 'content',
+                title: '缺少空间复杂度分析',
+                desc: '建议添加算法的空间复杂度分析',
+                line: 0
+            });
+        }
+        
+        const codeBlocks = text.match(/```[\s\S]*?```/g);
+        if (!codeBlocks || codeBlocks.length === 0) {
+            issues.push({
+                type: 'warning',
+                category: 'content',
+                title: '缺少代码部分',
+                desc: '题解通常应包含完整的代码实现',
+                line: 0
+            });
+        }
+        
+        const lineCount = text.split('\n').length;
+        if (lineCount < 10) {
+            issues.push({
+                type: 'warning',
+                category: 'content',
+                title: '题解内容过短',
+                desc: '题解应包含足够的分析内容',
+                line: 0
+            });
+        }
+        
+        if (/O\(\d+\)/.test(text) && !/O\([nmlk]/i.test(text)) {
+            issues.push({
+                type: 'warning',
+                category: 'content',
+                title: '时间复杂度表述建议',
+                desc: '建议使用变量 (如 n, m, k) 而非具体数字表示时间复杂度',
+                line: 0
+            });
+        }
+        
+        const headers = text.match(/^#+[^#\s].*$/gm);
         if (headers) {
             const levels = headers.map(h => h.match(/^(#+)/)[1].length);
             for (let i = 1; i < levels.length; i++) {
                 if (levels[i] > levels[i-1] + 1) {
-                    issues.push({ type: 'warning', category: 'markdown', title: '标题层级跳级', desc: '建议标题层级按顺序递增', line: 0 });
+                    issues.push({
+                        type: 'warning',
+                        category: 'content',
+                        title: '标题层级跳级',
+                        desc: '建议标题层级按顺序递增，避免从 H2 直接跳到 H4',
+                        line: 0
+                    });
                     break;
                 }
             }
         }
+        
+        const formulas = text.match(/\$[^$]+\$/g);
+        if (formulas && formulas.length > 0) {
+            let hasComplexMath = false;
+            for (const formula of formulas) {
+                if (formula.includes('\\') || formula.includes('_') || formula.includes('^')) {
+                    hasComplexMath = true;
+                    break;
+                }
+            }
+            if (!hasComplexMath && formulas.length > 5) {
+                issues.push({
+                    type: 'warning',
+                    category: 'content',
+                    title: '过度使用公式',
+                    desc: '简单的数字和字母可能不需要用 $...$ 包裹',
+                    line: 0
+                });
+            }
+        }
+        
         return issues;
     }
 
-    function performFullCheck() {
-        const text = inputEl.value;
-        if(!text.trim()) return [{ type:'warning', category:'content', title:'输入为空', desc:'请输入题解文本', line:0 }];
-        let issues = [];
-        issues.push(...checkPunctuation(text));
-        issues.push(...checkChineseEnglishSpace(text));
-        issues.push(...checkMarkdownFormat(text));
-        issues.push(...checkLaTeXFormat(text));
-        issues.push(...checkContentRules(text));
-        return issues;
+    function Sugg2Keyboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            const toast = document.createElement('div');
+            toast.style.cssText = 'position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #4CAF50; color: white; padding: 12px 24px; border-radius: 8px; z-index: 10000; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);';
+            toast.textContent = `已复制: ${text}`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 1500);
+        }).catch(err => {
+            console.error('复制失败:', err);
+        });
     }
 
-    function renderIssuesWithFilters() {
-        if (!rawIssues) {
-            document.getElementById('issuesList').innerHTML = '<li class="issue-item success"><div class="issue-content"><div class="issue-title">暂无检查结果</div><div class="issue-desc">请点击开始检查</div></div></li>';
+    function copyAllSuggestions() {
+        if (!rawIssues || rawIssues.length === 0) {
+            alert('没有检查结果可复制，请先执行检查');
             return;
         }
+        
         let filtered = rawIssues.filter(issue => {
             const cat = issue.category || 'content';
             return categoryFilters[cat] !== false;
         });
-        if(currentTypeFilter !== 'all') filtered = filtered.filter(i => i.type === currentTypeFilter);
+        if (currentTypeFilter !== 'all') {
+            filtered = filtered.filter(i => i.type === currentTypeFilter);
+        }
         
-        const successCount = filtered.filter(i=>i.type==='success').length;
-        const warningCount = filtered.filter(i=>i.type==='warning').length;
-        const errorCount = filtered.filter(i=>i.type==='error').length;
-        document.getElementById('successCount').textContent = successCount;
+        const suggestions = filtered.filter(i => i.sugg).map(i => i.sugg);
+        if (suggestions.length === 0) {
+            alert('没有可复制的建议');
+            return;
+        }
+        
+        const allSuggestions = suggestions.join('\n');
+        navigator.clipboard.writeText(allSuggestions).then(() => {
+            const toast = document.createElement('div');
+            toast.style.cssText = 'position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #4CAF50; color: white; padding: 12px 24px; border-radius: 8px; z-index: 10000; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);';
+            toast.textContent = `已复制 ${suggestions.length} 条建议`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 1500);
+        }).catch(err => {
+            console.error('复制失败:', err);
+        });
+    }
+
+    function renderIssuesWithFilters() {
+        const issuesList = document.getElementById('issuesList');
+        
+        if (!hasChecked) {
+            issuesList.innerHTML = '<li class="issue-item success" style="text-align: center; justify-content: center;"><div class="issue-content"><div class="issue-title">✨ 等待检查</div><div class="issue-desc">请输入题解文本并点击「开始检查」</div></div></li>';
+            document.getElementById('successCount').textContent = '0';
+            document.getElementById('warningCount').textContent = '0';
+            document.getElementById('errorCount').textContent = '0';
+            return;
+        }
+        
+        let filtered = rawIssues.filter(issue => {
+            const cat = issue.category || 'content';
+            return categoryFilters[cat] !== false;
+        });
+        if (currentTypeFilter !== 'all') {
+            filtered = filtered.filter(i => i.type === currentTypeFilter);
+        }
+        
+        const warningCount = filtered.filter(i => i.type === 'warning').length;
+        const errorCount = filtered.filter(i => i.type === 'error').length;
+        const hasNoProblems = rawIssues.length === 0 || (warningCount === 0 && errorCount === 0);
+        
+        document.getElementById('successCount').textContent = hasNoProblems ? '1' : '0';
         document.getElementById('warningCount').textContent = warningCount;
         document.getElementById('errorCount').textContent = errorCount;
 
-        const container = document.getElementById('issuesList');
-        if(filtered.length === 0){
-            container.innerHTML = '<li class="issue-item success"><div class="issue-content"><div class="issue-title">🎉 未发现问题</div><div class="issue-desc">格式基本符合规范 (或当前过滤隐藏了所有项)</div></div></li>';
+        if (filtered.length === 0) {
+            issuesList.innerHTML = '<li class="issue-item success" style="text-align: center; justify-content: center;"><div class="issue-content"><div class="issue-title">🎉 恭喜！您的题解格式完全符合洛谷规范！</div><div class="issue-desc">继续保持，您的格式非常规范</div></div></li>';
             return;
         }
-        container.innerHTML = filtered.map((issue,idx) => {
-            const icon = issue.type==='success'?'✓':(issue.type==='warning'?'⚠️':'✗');
-            const location = issue.line ? `行 ${issue.line}${issue.col?`, 列 ${issue.col}`:''}` : '全文';
-            return `<li class="issue-item ${issue.type}" onclick="jumpToLine(${issue.line || 0})">
+        
+        issuesList.innerHTML = filtered.map((issue, idx) => {
+            const icon = issue.type === 'success' ? '✓' : (issue.type === 'warning' ? '⚠️' : '✗');
+            const location = issue.line ? `行 ${issue.line}${issue.col ? '，列 ' + issue.col : ''}` : '全文';
+            const copyText = issue.sugg && issue.sugg.includes('...') ? '复制模板' : '复制';
+            const suggButton = issue.sugg ? `<button class="copy-btn" onclick="event.stopPropagation(); Sugg2Keyboard('${issue.sugg.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}')">${copyText}</button>` : '';
+            return `<li class="issue-item ${issue.type}" onclick="JumpTo(${issue.line || 0})">
                         <span class="issue-icon">${icon}</span>
                         <div class="issue-content">
-                            <div class="issue-title">${escapeHtml(issue.title)}</div>
+                            <div class="issue-title">${escapeHtml(issue.title)}${suggButton}</div>
                             <div class="issue-desc">${escapeHtml(issue.desc)}</div>
-                            <div class="issue-location">📍 ${location}</div>
+                            ${issue.line ? `<div class="issue-location">📍 ${location}</div>` : ''}
                         </div>
                     </li>`;
         }).join('');
@@ -906,19 +1636,19 @@
 
     function escapeHtml(str) { 
         return str.replace(/[&<>]/g, function(m){
-            if(m==='&') return '&amp;'; 
-            if(m==='<') return '&lt;'; 
-            if(m==='>') return '&gt;'; 
+            if(m === '&') return '&amp;'; 
+            if(m === '<') return '&lt;'; 
+            if(m === '>') return '&gt;'; 
             return m;
         }); 
     }
 
-    function jumpToLine(line) {
+    function JumpTo(line) {
         if(!line || line <= 0) return;
         const textarea = inputEl;
         const lines = textarea.value.split('\n');
         let pos = 0;
-        for(let i=0; i<line-1 && i<lines.length; i++) pos += lines[i].length + 1;
+        for(let i = 0; i < line - 1 && i < lines.length; i++) pos += lines[i].length + 1;
         textarea.focus();
         textarea.setSelectionRange(pos, pos);
         
@@ -942,7 +1672,7 @@
             updateLineNumbers();
         }, 2000);
         
-        textarea.scrollTop = Math.max(0, (line-1) * 22 - 80);
+        textarea.scrollTop = Math.max(0, (line-1) * 24 - 100);
         syncScroll();
     }
 
@@ -952,6 +1682,7 @@
         btn.innerHTML = '<span>⏳</span> 检查中...';
         btn.disabled = true;
         
+        hasChecked = true;
         document.getElementById('checkTime').textContent = `检查: ${new Date().toLocaleTimeString()}`;
         
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -970,10 +1701,22 @@
         }, delay);
     }
 
+    function performFullCheck() {
+        const text = inputEl.value;
+        if(!text.trim()) return [{ type:'warning', category:'content', title:'输入为空', desc:'请输入题解文本', line:0 }];
+        let issues = [];
+        issues.push(...checkPunctuation(text));
+        issues.push(...checkChineseEnglishSpace(text));
+        issues.push(...checkMarkdownFormat(text));
+        issues.push(...checkLaTeXFormat(text));
+        issues.push(...checkContentRules(text));
+        return issues;
+    }
+
     function exportReport() {
-        if(document.getElementById('successCount').textContent === '—') {
-            alert('请先完成检查再导出报告');
-            return;
+        if(!rawIssues || rawIssues.length === 0) { 
+            alert('暂无检查结果，请先执行检查'); 
+            return; 
         }
         let filtered = rawIssues.filter(i => categoryFilters[i.category||'content'] !== false);
         if(currentTypeFilter !== 'all') filtered = filtered.filter(i=>i.type===currentTypeFilter);
@@ -984,16 +1727,16 @@
         filtered.forEach(issue => {
             report += `[${issue.type==='error'?'错误':(issue.type==='warning'?'警告':'通过')}] ${issue.title}\n    ${issue.desc} ${issue.line?`(位置:行${issue.line})`:''}\n`;
         });
-        const blob = new Blob([report], {type:'text/plain;charset=utf-8'});
+        const blob = new Blob([report], {type:'text/plain'});
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
-        a.download = `luogu_report_${new Date().toLocaleDateString()}.txt`;
+        a.download = `luogu_report_${new Date().toISOString().slice(0,19)}.txt`;
         a.click();
         URL.revokeObjectURL(a.href);
     }
 
     function loadExample() {
-        inputEl.value = "# 题目解析：动态规划经典\n\n本题可以使用线性DP解决。设 $dp[i]$ 表示前 $i$ 个元素的最大子段和，状态转移：\n\n$$dp[i] = \\max(a[i], dp[i-1] + a[i])$$\n\n时间复杂度 $O(n)$，空间复杂度 $O(n)$。\n\n## 代码实现\n\n```cpp\n#include <bits/stdc++.h>\nusing namespace std;\nint main() { int n; cin>>n; return 0; }\n```\n\n注意：使用全角标点。例如正确使用句号。不要使用三个冒号:::会被忽略检查。";
+        inputEl.value = "# 题目解析：动态规划经典\n\n这道题可以使用动态规划解决。设 dp[i] 表示前 i 个元素的最大子段和。\n\n状态转移方程为：\n\n$$dp[i] = \\max(dp[i-1], dp[i-2] + a[i])$$\n\n时间复杂度为 O(n)，空间复杂度为 O(n)。\n\n## 代码实现\n\n```cpp\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for(int i = 0; i < n; i++) cin >> a[i];\n    vector<int> dp(n+1);\n    dp[0] = 0;\n    dp[1] = a[0];\n    for(int i = 2; i <= n; i++) {\n        dp[i] = max(dp[i-1], dp[i-2] + a[i-1]);\n    }\n    cout << dp[n] << endl;\n    return 0;\n}\n```\n\n注意：这是DP(动态规划)的经典应用。";
         updateLineNumbers();
         updateStats();
         checkSolution();
@@ -1001,22 +1744,21 @@
 
     function clearAll() {
         clearTimeout(saveTimer);
-        if(inputEl.value.trim() && confirm("清空所有内容？")) {
-            inputEl.value = '';
-            updateLineNumbers();
-            updateStats();
+        if(inputEl.value.trim() && confirm('清空所有内容？此操作不可撤销。')) { 
+            inputEl.value = ''; 
+            updateLineNumbers(); 
+            updateStats(); 
+            rawIssues = []; 
+            hasChecked = false;
+            renderIssuesWithFilters(); 
+            document.getElementById('checkTime').textContent = ''; 
             localStorage.removeItem('solution_draft');
-            rawIssues = [];
-            renderIssuesWithFilters();
-            document.getElementById('checkTime').textContent = '';
-            document.getElementById('successCount').textContent = '—';
-            document.getElementById('warningCount').textContent = '—';
-            document.getElementById('errorCount').textContent = '—';
-        } else if(!inputEl.value.trim()) {
-            inputEl.value = '';
-            updateLineNumbers();
-            updateStats();
-            rawIssues = [];
+        } else if(!inputEl.value.trim()) { 
+            inputEl.value = ''; 
+            updateLineNumbers(); 
+            updateStats(); 
+            rawIssues = []; 
+            hasChecked = false;
             renderIssuesWithFilters();
         }
     }
@@ -1032,11 +1774,13 @@
         });
         const saved = localStorage.getItem('luogu_cat_filters');
         if(saved) {
-            try{
+            try {
                 const savedObj = JSON.parse(saved);
                 Object.assign(categoryFilters, savedObj);
-                checkboxes.forEach(cb => { if(categoryFilters[cb.value] !== undefined) cb.checked = categoryFilters[cb.value]; });
-            } catch(e){}
+                checkboxes.forEach(cb => { 
+                    if(categoryFilters[cb.value] !== undefined) cb.checked = categoryFilters[cb.value]; 
+                });
+            } catch(e) {}
         }
         document.querySelectorAll('[data-filter]').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -1106,11 +1850,12 @@
         }
     });
 
-    window.jumpToLine = jumpToLine;
+    window.jumpToLine = JumpTo;
     window.checkSolution = checkSolution;
     window.loadExample = loadExample;
     window.clearAll = clearAll;
     window.exportReport = exportReport;
+    window.copyAllSuggestions = copyAllSuggestions;
     window.toggleTheme = toggleTheme;
 
     updateLineNumbers();
